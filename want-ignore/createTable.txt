@@ -1,0 +1,57 @@
+第一步：建表：
+
+create table dept(
+       deptno int primary key,
+       dname varchar(30),
+       loc varchar(30)
+);commit;
+
+create table emp(
+       empno int primary key,
+       ename varchar(30),
+       job varchar(30),
+       mgr varchar(30),
+       hiredate int,
+       sal int,
+       comm int,
+       deptno int,
+       foreign key(deptno) references dept(deptno)
+);commit;
+
+
+第二步：向各表中插入数据：
+
+insert into dept values(1, '技术部' ,'南泥湾');
+insert into dept values(2, 'SALES' ,'深圳市');
+insert into dept values(3, '事业部' ,'北京市');
+insert into dept values(4, '服务部' ,'延安');
+insert into dept values(5, '生产部' ,'南京市');
+insert into dept values(6, '宣传部' ,'上海市');
+insert into dept values(7, '打杂部' ,'广州市');
+insert into dept values(8, '司令部' ,'重庆市');
+insert into dept values(9, '卫生部' ,'长沙市');
+insert into dept values(10, '文化部' ,'武冈市');
+insert into dept values(11, '娱乐部' ,'纽约');
+insert into dept values(12, '管理部' ,'伦敦');
+insert into dept values(13, '行政部' ,'天津市');
+
+
+insert into emp values(1, '关羽羽', 'CLERK' ,'3', 20011109, 2000, 1000, 3);
+insert into emp values(2, 'SMITH', 'CLERK' ,'3', 20120101, 2000, 800, 6);
+insert into emp values(3, '刘备备', 'MANAGER' ,'8', 20080808, 9000, 4000, 3);
+insert into emp values(4, 'TOM', 'ENGINEER' ,'5', 20050612, 3000, 1000, 1);
+insert into emp values(5, 'Steve', 'MANAGER' ,'8', 20110323, 80000, 9000, 1);
+insert into emp values(6, '张飞飞', 'CLERK' ,'3', 20101010, 2000, 1000, 3);
+insert into emp values(7, 'SCOTT', 'CLERK' ,'3', 20071204, 2000, 1000, 3);
+insert into emp values(8, '宋祖英', 'Boss' ,'8', 20060603, 2000, 1000, 8);
+insert into emp values(9, '曹仁人', 'SALESMAN' ,'10', 20120130, 2000, 1000, 2);
+insert into emp values(10, '曹操操', 'MANAGER' ,'8',20090815, 2000, 1000, 2);
+insert into emp values(11, '酱油哥', 'HAPI' ,'7',20090215, 3, 1, 2);
+
+
+
+
+create table vehicle(id number(11) not null,type varchar2(1) default null,doorSize number(11) default null,boxSize number(11) default null,color varchar2(20) default null,primary key (id));commit;
+
+
+insert into vehicle values(1,'C',2,null,'红色');insert into vehicle values(2,'C',4,null,'黑色');insert into vehicle values(3,'T',null,1,'蓝色');insert into vehicle values(4,'T',null,2,'蓝色');commit;
